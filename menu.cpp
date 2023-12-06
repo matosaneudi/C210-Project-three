@@ -13,7 +13,9 @@ void Menu::option1(int itemFreq, string currWord, string userItems) {
     cout << "Error opening the file" << endl;
     // handle the error maybe this a try and catch statement. 
   }
-
+  cout << "Please enter a produce item" << endl; 
+  cin >> userItems; 
+  // Possibly make function to lower case all input. 
   while (!inFile.eof()){
     inFile >> currWord; 
     if (!inFile.fail()) {

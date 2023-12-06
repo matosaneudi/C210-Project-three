@@ -5,11 +5,17 @@
 
 
 using namespace std; //testing123
-
+void printMenu() {
+	cout << "Please select a option" << endl; 
+	cout << "1: Check the frequency of one item." << endl; 
+	cout << "2: Check the frequency of all items purchased." << endl;
+	cout << "3: Generate a histogram of all items purchased." << endl;
+	cout << "4: Quits the program." << endl;
+}
 int main() { 
 	int userInput; 
 	Menu obj; 
-	cout << "Please select a option" << endl; 
+	printMenu();
 	//FIX ME get user input 
 	cin >> userInput; 
 	if (userInput !='4'){
