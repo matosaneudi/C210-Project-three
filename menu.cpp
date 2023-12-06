@@ -59,6 +59,35 @@ void Menu::option2() {
   inFile.close(); //close the file. 
 }
 
-void option3(string item, int itemFreq) {
-  
+void Menu::option3() {
+  int itemFreq = 0;
+	string currWord , userItems;
+  ifstream inFile("CS210_Project_Three_Input_File.txt"); //opens the txt file or reading. 
+
+  if (!inFile.is_open()){
+    cout << "Error opening the file" << endl;
+    // handle the error maybe this a try and catch statement. 
+  }
+  map<string, int> itemFreqMap; //stores the frequencies.
+
+  string purchasedItems; 
+
+  while (inFile >> purchasedItems) { 
+
+    if (itemFreqMap.find(purchasedItems) != itemFreqMap.end()) { // checks if the word is in the map.
+      itemFreqMap[purchasedItems]++;
+    }
+    else {
+      itemFreqMap[purchasedItems] = 1; // if the word was not in the map, initializes it with frequency of 1; 
+    }
+  }  
+  for (auto &entry : itemFreqMap) { // prints the items and the frequencies. 
+    cout << entry.first << " "; 
+    for (int i = 0; i < entry.second; i++) { 
+      cout << "*";
+    }
+  cout << endl;
+  }
+
+  inFile.close(); //close the file. 
 }

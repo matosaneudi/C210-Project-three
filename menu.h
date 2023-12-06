@@ -8,7 +8,7 @@ class Menu {
 
     void option1();
     void option2(); 
-    void option3(string items, int itemFreq);
+    void option3();
 
 
 

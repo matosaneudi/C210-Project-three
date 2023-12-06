@@ -33,7 +33,8 @@ int main() {
 			break;
 
 			case 3: 
-			// FIX ME call menu function three 
+			// FIX ME call menu function three
+			obj.option3();
 			break; 
 
 			case 4: 
