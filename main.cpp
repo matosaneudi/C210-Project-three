@@ -15,34 +15,32 @@ void printMenu() {
 int main() { 
 	int userInput; 
 	Menu obj; 
+	
 	printMenu();
-	//FIX ME get user input 
 	cin >> userInput; 
-	if (userInput !='4'){
+	while (userInput !='4'){
 			
 		switch (userInput) { 
-			case 1: {
+			case 1: 
 			obj.option1();
-			// FIX ME call menu function one 
-		}
 			break;
 
 			case 2: 
 			obj.option2();
-			// FIX ME call menu function two 
 			break;
-
+			
 			case 3: 
-			// FIX ME call menu function three
 			obj.option3();
 			break; 
-
+			
 			case 4: 
 			cout << "Exiting the program" << endl;
 			break;
 
 			default: 
-			// FIX ME check if the default statment can be used as a 
+			// FIX ME check if the default statment can be used as a error control.
+			cout << "Please make a valid selection" << endl; 
+			printMenu();
 			break;
 
 
