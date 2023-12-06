@@ -1,17 +1,21 @@
 #include <iostream>
 #include <string> 
 #include <fstream> 
+#include "menu.h"
 
-using namespace std; //testing
+
+using namespace std; //testing123
 
 int main() { 
-
+	int userInput; 
 	cout << "Please select a option" << endl; 
 	//FIX ME get user input 
+	cin >> userInput; 
 	if (userInput !='4'){
 			
-		switch (menu) { 
+		switch (userInput) { 
 			case 1:
+			Menu.option1(int itemFreq, string currWord, string userItems);
 			// FIX ME call menu function one 
 			break;
 
@@ -29,7 +33,7 @@ int main() {
 
 			default: 
 			// FIX ME check if the default statment can be used as a 
-
+			break;
 
 
 
