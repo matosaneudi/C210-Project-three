@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void option1(int itemFreq, string currWord, string userItems) { 
+void Menu::option1(int itemFreq, string currWord, string userItems) { 
   
   ifstream inFile("CS210_Project_Three_Input_File.txt"); //opens the txt file or reading. 
 

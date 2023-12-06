@@ -8,15 +8,19 @@ using namespace std; //testing123
 
 int main() { 
 	int userInput; 
+	Menu obj; 
 	cout << "Please select a option" << endl; 
 	//FIX ME get user input 
 	cin >> userInput; 
 	if (userInput !='4'){
 			
 		switch (userInput) { 
-			case 1:
-			Menu.option1(int itemFreq, string currWord, string userItems);
+			case 1: {
+			int itemFreq = 0;
+			string currWord , userItems;
+			obj.option1(itemFreq, currWord, userItems);
 			// FIX ME call menu function one 
+		}
 			break;
 
 			case 2: 
