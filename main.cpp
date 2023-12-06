@@ -22,14 +22,13 @@ int main() {
 			
 		switch (userInput) { 
 			case 1: {
-			int itemFreq = 0;
-			string currWord , userItems;
-			obj.option1(itemFreq, currWord, userItems);
+			obj.option1();
 			// FIX ME call menu function one 
 		}
 			break;
 
 			case 2: 
+			obj.option2();
 			// FIX ME call menu function two 
 			break;
 

@@ -6,8 +6,8 @@ using namespace std;
 class Menu {
   public: 
 
-    void option1(int itemfreq, string currWord, string userItems);
-    void option2(string items, int intemFreq); 
+    void option1();
+    void option2(); 
     void option3(string items, int itemFreq);
 
 
