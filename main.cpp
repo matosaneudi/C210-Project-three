@@ -18,13 +18,18 @@ int main() {
 	int userInput; 
 	Menu obj; 
 	
-	// printMenu();
-	// cin >> userInput; 
-	// do (userInput !='4'){
 	do {
-	 	//cout; 
+
 		printMenu();		
-		cin >> userInput; 
+		
+		if (!(cin >> userInput)) {
+			cin.clear();
+			cin.ignore(100, '\n');
+			cout << endl;
+			cout << "Please make a valid selection (1-4)." << endl;
+			cout << endl;
+			continue;
+		}	
 		switch (userInput) {
 			case 1: 
 			obj.option1();
@@ -39,7 +44,8 @@ int main() {
 			break; 
 			
 			case 4: 
-			cout << "Exiting the program" << endl;
+			cout << "Exiting the program..." << endl;
+			exit(0);
 			break;
 
 			default: 
@@ -49,7 +55,8 @@ int main() {
 			break;
 		}
 	} 
-	while (userInput != '4');
+	while (userInput != 4);
+		
 
 
 
