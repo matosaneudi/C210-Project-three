@@ -6,21 +6,26 @@
 
 using namespace std; //testing123
 void printMenu() {
-	cout << "Please select a option" << endl; 
-	cout << "1: Check the frequency of one item." << endl; 
-	cout << "2: Check the frequency of all items purchased." << endl;
-	cout << "3: Generate a histogram of all items purchased." << endl;
-	cout << "4: Quits the program." << endl;
+	cout << "==============================================" << endl;
+	cout << "            Please select a option            " << endl; 
+	cout << "==============================================" << endl;
+	cout << "1) Check the frequency of one item." << endl; 
+	cout << "2) Check the frequency of all items purchased." << endl;
+	cout << "3) Generate a histogram of all items purchased." << endl;
+	cout << "4) Quits the program." << endl;
 }
 int main() { 
 	int userInput; 
 	Menu obj; 
 	
-	printMenu();
-	cin >> userInput; 
-	while (userInput !='4'){
-			
-		switch (userInput) { 
+	// printMenu();
+	// cin >> userInput; 
+	// do (userInput !='4'){
+	do {
+	 	//cout; 
+		printMenu();		
+		cin >> userInput; 
+		switch (userInput) {
 			case 1: 
 			obj.option1();
 			break;
@@ -40,17 +45,15 @@ int main() {
 			default: 
 			// FIX ME check if the default statment can be used as a error control.
 			cout << "Please make a valid selection" << endl; 
-			printMenu();
+			// printMenu();
 			break;
-
-
-
 		}
-	}
+	} 
+	while (userInput != '4');
 
 
 
-	return 0; 
+	// return 0; 
 };
 
 

@@ -3,6 +3,7 @@
 #include <fstream> 
 #include "menu.h"
 #include <map>
+#include <iomanip>
 
 using namespace std;
 
@@ -26,10 +27,11 @@ void Menu::option1() {
       }
     }
   }
+	// cout << "==============================================" << endl;
   cout << "The frequency of the item entered is:  " << itemFreq << endl;
+	//cout << "==============================================" << endl;  
   inFile.close();
 }
-
 void Menu::option2() {
   int itemFreq = 0;
 	string currWord , userItems;
