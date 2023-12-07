@@ -3,8 +3,8 @@
 #include <fstream> 
 #include "menu.h"
 
-
 using namespace std; //testing123
+
 void printMenu() {
 	cout << "==============================================" << endl;
 	cout << "            Please select a option            " << endl; 
@@ -21,18 +21,15 @@ int main() {
 	do {
 
 		printMenu();		
-		
-		if (!(cin >> userInput)) {
-			cin.clear();
+		/* validates user input, if anything that does not match case (1-4)
+		is entered the default case will execute*/
+		if (!(cin >> userInput)) { 
+			cin.clear(); // clears the error. 
 			cin.ignore(100, '\n');
-			cout << endl;
-			cout << "Please make a valid selection (1-4)." << endl;
-			cout << endl;
-			continue;
 		}	
 		switch (userInput) {
 			case 1: 
-			obj.option1();
+			obj.option1(); 
 			break;
 
 			case 2: 
@@ -49,18 +46,13 @@ int main() {
 			break;
 
 			default: 
-			// FIX ME check if the default statment can be used as a error control.
-			cout << "Please make a valid selection" << endl; 
-			// printMenu();
+			cout << endl;
+			cout << "Please make a valid selection (1-4).\n" << endl;
 			break;
 		}
 	} 
 	while (userInput != 4);
-		
-
-
-
-	// return 0; 
+	return 0; 
 };
 
 

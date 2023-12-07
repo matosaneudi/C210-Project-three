@@ -13,7 +13,7 @@ class Menu {
 
 
   private:
-    string items;
+    //string items;
     int itemFreq;
     string currWord;
     string userItems;
