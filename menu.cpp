@@ -6,84 +6,51 @@
 #include <iomanip>
 
 using namespace std;
-
-void Menu::option1() { 
-  int itemFreq = 0;
-	string currWord , userItems;
+Menu::Menu() {
+  string purchasedItems;   
   ifstream inFile("CS210_Project_Three_Input_File.txt"); //opens the txt file or reading. 
 
   if (!inFile.is_open()){
     cout << "Error opening the file" << endl;
     // handle the error maybe this a try and catch statement. 
   }
-  cout << "Please enter a produce item: " << endl; 
-  cin >> userItems; 
-  // Possibly make function to lower case all input. 
-  while (!inFile.eof()){
-    inFile >> currWord; 
-    if (!inFile.fail()) {
-      if (currWord == userItems) {
-        ++itemFreq; 
-      }
+  while (inFile >> purchasedItems) { 
+
+    if (itemFreqMap.find(purchasedItems) != itemFreqMap.end()) { // checks if the word is in the map.
+      itemFreqMap[purchasedItems]++;
     }
-  }
-	// cout << "==============================================" << endl;
-  cout << "The frequency of the item entered is:  " << itemFreq << endl;
-	//cout << "==============================================" << endl;  
+    else {
+      itemFreqMap[purchasedItems] = 1; // if the word was not in the map, initializes it with frequency of 1; 
+    }
+  }  
   inFile.close();
 }
 
-void Menu::option2() {
-  int itemFreq = 0;
-	string currWord , userItems;
-  ifstream inFile("CS210_Project_Three_Input_File.txt"); //opens the txt file or reading. 
-
-  if (!inFile.is_open()){
-    cout << "Error opening the file" << endl;
-    // handle the error maybe this a try and catch statement. 
+void Menu::option1() { 
+	string userItems;
+  int produce;
+  cout << " Please enter produce item: " << endl;
+  cin >> userItems; 
+  
+  if (itemFreqMap.find(userItems) != itemFreqMap.end()) {
+    produce = itemFreqMap[userItems];
   }
-  map<string, int> itemFreqMap; //stores the frequencies.
+  else {
+    produce = 0; 
+  }
+  cout << "==============================================" << endl;
+  cout << "The frequency of the item entered is:  " << produce << endl;
+	//cout << "==============================================" << endl;  
+  
+}
 
-  string purchasedItems; 
-
-  while (inFile >> purchasedItems) { 
-
-    if (itemFreqMap.find(purchasedItems) != itemFreqMap.end()) { // checks if the word is in the map.
-      itemFreqMap[purchasedItems]++;
-    }
-    else {
-      itemFreqMap[purchasedItems] = 1; // if the word was not in the map, initializes it with frequency of 1; 
-    }
-  }  
+void Menu::option2() {
   for (auto &entry : itemFreqMap) { // prints the items and the frequencies. 
     cout << entry.first << " " << entry.second << endl; 
   }
-
-  inFile.close(); //close the file. 
 }
 
 void Menu::option3() {
-  int itemFreq = 0;
-	string currWord , userItems;
-  ifstream inFile("CS210_Project_Three_Input_File.txt"); //opens the txt file or reading. 
-
-  if (!inFile.is_open()){
-    cout << "Error opening the file" << endl;
-    // handle the error maybe this a try and catch statement. 
-  }
-  map<string, int> itemFreqMap; //stores the frequencies.
-
-  string purchasedItems; 
-
-  while (inFile >> purchasedItems) { 
-
-    if (itemFreqMap.find(purchasedItems) != itemFreqMap.end()) { // checks if the word is in the map.
-      itemFreqMap[purchasedItems]++;
-    }
-    else {
-      itemFreqMap[purchasedItems] = 1; // if the word was not in the map, initializes it with frequency of 1; 
-    }
-  }  
   for (auto &entry : itemFreqMap) { // prints the items and the frequencies. 
     cout << entry.first << " "; 
     for (int i = 0; i < entry.second; i++) { 
@@ -91,6 +58,4 @@ void Menu::option3() {
     }
   cout << endl;
   }
-
-  inFile.close(); //close the file. 
 }

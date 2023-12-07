@@ -56,3 +56,13 @@ int main() {
 };
 
 
+/* add the Create a data file, with the naming convention frequency.dat,
+ for backing up your accumulated data. The frequency.dat file should include every
+  item (represented by a word) paired with the number of times that item appears in the input file 
+
+find out if i can clear the teminal for every fucntion but not mess up the formatting 
+
+take screenshots of the code menu and functions to explain in documetation word document
+	
+	
+*/
